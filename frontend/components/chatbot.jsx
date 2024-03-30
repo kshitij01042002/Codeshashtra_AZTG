@@ -4,23 +4,24 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import axios from 'axios';
+import { IoMdSend } from "react-icons/io";
+import { FaMicrophoneAlt } from "react-icons/fa";
 
 const theme = createTheme();
 
 const useStyles = makeStyles(() => ({
   chatContainer: {
-    Width: '100%',
+    width: '100%', // Corrected capitalization
     margin: "0 auto",
     padding: 20,
     borderRadius: 8,
     boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
     backgroundColor: "#f9f9f9",
-    zIndex : 1,
-    position : 'relative',
+    position: 'relative',
   },
   chatMessages: {
-    minHeight: 200,
-    maxHeight: 300,
+    minHeight: 150, // Adjusted minimum height for better mobile view
+    maxHeight: 200,
     overflowY: "auto",
     marginBottom: 20,
     padding: 10,
@@ -30,13 +31,13 @@ const useStyles = makeStyles(() => ({
   inputContainer: {
     display: "flex",
     alignItems: "center",
+    marginBottom: 20, // Added margin bottom for better separation
   },
   inputField: {
     flex: 1,
     marginRight: 10,
   },
   sendButton: {
-    marginLeft: 10,
     backgroundColor: "#2196F3",
     color: "#fff",
     "&:hover": {
@@ -54,13 +55,12 @@ const ChatBott = () => {
     if (inputMessage.trim() !== '') {
       const userMessage = inputMessage.trim();
       setChatMessages(prevMessages => [...prevMessages, { type: 'user', text: userMessage }]);
-      
+
       try {
-        const response = await axios.post('http://localhost:5000/get_bot_response', { userMessage });
+        const response = await axios.post('http://192.168.189.180:5000/get_bot_response', { userMessage });
         const botResponse = response.data.botResponse;
         setChatMessages(prevMessages => [...prevMessages, { type: 'bot', text: botResponse }]);
-        console.log(botResponse);
-        handleVoiceOutput(botResponse); // Voicing out the bot response
+        handleVoiceOutput(botResponse);
       } catch (error) {
         console.error('Error fetching bot response:', error);
       }
@@ -78,12 +78,11 @@ const ChatBott = () => {
       setInputMessage(userVoiceInput);
 
       try {
-        const response = await axios.post('http://localhost:5000/get_bot_response', { userMessage: userVoiceInput });
+        const response = await axios.post('http://192.168.189.180:5000/get_bot_response', { userMessage: userVoiceInput });
         const botResponse = response.data.botResponse;
         setChatMessages(prevMessages => [...prevMessages, { type: 'user', text: userVoiceInput }]);
         setChatMessages(prevMessages => [...prevMessages, { type: 'bot', text: botResponse }]);
-        console.log(botResponse);
-        handleVoiceOutput(botResponse); // Voicing out the bot response
+        handleVoiceOutput(botResponse);
       } catch (error) {
         console.error('Error fetching bot response:', error);
       }
@@ -98,15 +97,13 @@ const ChatBott = () => {
     let hh = String(text);
     const synth = window.speechSynthesis;
     const utterance = new SpeechSynthesisUtterance(hh);
-    console.log(utterance);
-
     synth.speak(utterance);
   };
 
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.chatContainer}>
-        <h2>Chat with the Stylish ChatBot</h2>
+        <h2 style={{ textAlign: "center" }}>Chat with the Stylish ChatBot</h2>
         <div className={classes.chatMessages}>
           {chatMessages.map((message, index) => (
             <div key={index} style={{ marginBottom: 10, color: message.type === 'user' ? '#2196F3' : '#4CAF50' }}>
@@ -123,11 +120,11 @@ const ChatBott = () => {
             value={inputMessage}
             onChange={(e) => setInputMessage(e.target.value)}
           />
-          <Button variant="contained" className={classes.sendButton} onClick={handleSendMessage}>
-            Send
+          <Button className={classes.sendButton} onClick={handleSendMessage}>
+            <IoMdSend />
           </Button>
-          <Button variant="contained" className={classes.sendButton} onClick={handleVoiceInput}>
-            Microphone
+          <Button onClick={handleVoiceInput}>
+            <FaMicrophoneAlt />
           </Button>
         </div>
       </div>

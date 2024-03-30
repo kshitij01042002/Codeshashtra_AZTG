@@ -32,7 +32,7 @@ const CropForm = () => {
     let data = null;
 
     await axios
-      .post("http://127.0.0.1:5000/crop-predict", {
+      .post("http://192.168.189.180:5000/crop-predict", {
         N: Number(formData.N),
         P: Number(formData.P),
         K: Number(formData.K),
@@ -60,57 +60,10 @@ const CropForm = () => {
   };
   return (
     <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
-      {/* <div className="flex items-center justify-center mt-5">
-        <form onSubmit={handleSubmit} className="w-full max-w-lg">
-          <div className="flex flex-wrap -mx-3 mb-6">
-            <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-
-            </div>
-            <div className="w-full md:w-1/2 px-3">
-
-            </div>
-          </div>
-          <div className="flex flex-wrap -mx-3 mb-6">
-            <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-
-            </div>
-            <div className="w-full md:w-1/2 px-3">
-
-            </div>
-          </div>
-          <div className="flex flex-wrap -mx-3 mb-6">
-            <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-
-            </div>
-            <div className="w-full md:w-1/2 px-3">
-
-            </div>
-          </div>
-          <div class="flex flex-wrap -mx-3 mb-6">
-            <div class="w-full md:w-2/2 px-3 mb-6 md:mb-0">
-
-            </div>
-          </div>
-          <div className="flex flex-wrap justify-center mx-3 mb-2">
-            <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded h-10">
-              Submit
-            </button>
-          </div>
-          {output && (
-            <div
-              class="mt-2 p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800"
-              role="alert"
-            >
-              <span class="font-medium">Recommended Crop: </span>
-              {output}
-            </div>
-          )}
-        </form>
-      </div> */}
       <div className="flex-auto px-4 lg:px-10 py-10">
         <form onSubmit={handleSubmit}>
-          <div className="grid grid-cols-2">
-            <div className="mb-3 mr-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="mb-3">
               <label
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="Location"
@@ -118,7 +71,7 @@ const CropForm = () => {
                 Location
               </label>
               <input
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="w-full border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring ease-linear transition-all duration-150"
                 id="Location"
                 placeholder="Location"
                 name="Location"
@@ -127,9 +80,7 @@ const CropForm = () => {
                 value={formData.Location}
               />
             </div>
-          </div>
-          <div className="grid grid-cols-2">
-            <div className="mr-2 mb-3">
+            <div className="mb-3">
               <label
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="PH"
@@ -137,7 +88,7 @@ const CropForm = () => {
                 PH
               </label>
               <input
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="w-full border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring ease-linear transition-all duration-150"
                 id="PH"
                 type="number"
                 placeholder="PH"
@@ -149,8 +100,7 @@ const CropForm = () => {
                 value={formData.PH}
               />
             </div>
-
-            <div className="ml-2 mb-3">
+            <div className="mb-3">
               <label
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="N"
@@ -158,7 +108,7 @@ const CropForm = () => {
                 Nitrogen (in PPM)
               </label>
               <input
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="w-full border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring ease-linear transition-all duration-150"
                 id="N"
                 type="number"
                 placeholder="Nitrogen"
@@ -170,9 +120,7 @@ const CropForm = () => {
                 value={formData.N}
               />
             </div>
-          </div>
-          <div className="grid grid-cols-2">
-            <div className="mr-2 mb-3">
+            <div className="mb-3">
               <label
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="K"
@@ -180,7 +128,7 @@ const CropForm = () => {
                 Potassium (in PPM)
               </label>
               <input
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="w-full border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring ease-linear transition-all duration-150"
                 id="K"
                 type="number"
                 placeholder="Potassium"
@@ -192,8 +140,7 @@ const CropForm = () => {
                 value={formData.K}
               />
             </div>
-
-            <div className="ml-2 mb-3">
+            <div className="mb-3">
               <label
                 className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                 htmlFor="P"
@@ -201,7 +148,7 @@ const CropForm = () => {
                 Phosphorus (in PPM)
               </label>
               <input
-                className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                className="w-full border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring ease-linear transition-all duration-150"
                 id="P"
                 type="number"
                 placeholder="Phosphorous"
@@ -216,16 +163,10 @@ const CropForm = () => {
           </div>
 
           <div className="flex justify-center mt-6">
-            {/* <button
-              className="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-              type="submit"
-            >
-              Submit
-            </button> */}
             <button
               type="submit"
               disabled={isDisabled}
-              className="w-96 h-12 flex justify-center items-center text-md text-white bg-blueGray-800 hover:bg-blueGray-800 transition-all font-medium rounded-lg px-5 py-2.5 text-center"
+              className="w-full md:w-96 h-12 flex justify-center items-center text-md text-white bg-blueGray-800 hover:bg-blueGray-800 transition-all font-medium rounded-lg px-5 py-2.5 text-center"
             >
               {isLoading ? (
                 <ReactLoading
@@ -241,7 +182,7 @@ const CropForm = () => {
           </div>
 
           {output ? (
-            <div class="mt-2 p-4 mb-4 text-sm rounded-lg" role="alert">
+            <div className="mt-2 p-4 mb-4 text-sm rounded-lg" role="alert">
               <CardTable output={output} />
             </div>
           ) : (

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { signIn, useSession, getSession } from "next-auth/react";
 import Admin from "layouts/Admin.js";
 import FertilizerForm from "components/FertilizerForm";
+import ReactAudioPlayer from "react-audio-player";
 
 export default function Fertilizer() {
   const { data: session, status } = useSession();
@@ -19,8 +20,8 @@ export default function Fertilizer() {
     <Admin
       title="Fertilizer Recommendation"
       headerText="Enter details to get fertilizer recommendations"
- 
     >
+      <ReactAudioPlayer src="/fertilizer.mp3" controls/>
       <div className="flex flex-wrap mt-4 justify-center">
         <div className="w-full mb-12 xl:mb-0 px-4">
           <FertilizerForm />

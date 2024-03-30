@@ -50,7 +50,7 @@ const IndexDropdown = () => {
               "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
             }
           >
-            LOAN WAIVER DATA
+            FINANCE MANAGEMENT
           </a>
         </Link>
         <Link href="/admin/settings">

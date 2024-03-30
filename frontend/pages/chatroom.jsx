@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { signIn, useSession, getSession } from "next-auth/react";
+import ReactAudioPlayer from "react-audio-player";
 import Admin from "layouts/Admin.js";
 
 import ChatRoom from "components/chatroom";
@@ -19,9 +20,10 @@ export default function Chatbott() {
   }
   return (
     <Admin title="CHATROOM" headerText="Welcome to KissanTalks, Chat with your farming buddies">
+      <ReactAudioPlayer src="/chatserver.mp3" controls style={{marginBottom: "30px"}}/>   
       <div style={{zIndex:10, position:"relative"}}>
         <iframe
-          src="http://localhost:8080/index.html"
+          src="http://192.168.189.180:8080/index.html"
           width="100%"
           height="500px"
         ></iframe>

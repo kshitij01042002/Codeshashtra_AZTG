@@ -25,7 +25,7 @@ const FruitDiseaseForm = () => {
     data.append("file", file.selectedFile);
 
     await axios
-      .post("http://127.0.0.1:5000/predict-fruit-disease",data)
+      .post("http://192.168.189.180:5000/predict-fruit-disease",data)
       .then(function (response) {
         console.log(response);
         // let newData = String(response.data.prediction);

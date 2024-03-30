@@ -11,11 +11,17 @@ export default function Index() {
   return (
     <Layout title="Home / KHETI">
       <IndexNavbar fixed />
+      <img
+          className="absolute top-0 b-auto right-0 pt-12 sm:w-6/12 mt-16 sm:mt-0 w-100 max-h-860-px"
+          src="/img/homelogo.png"
+          alt="..."
+        />
+
       <section className="header relative pt-16 items-center flex h-screen max-h-860-px mt-30">
         <div className="container mx-auto items-center flex flex-wrap">
           <div className="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
             <div className="pt-32 sm:pt-0">
-              <h2 className="font-semibold text-4xl text-blueGray-600">
+              <h2 className="font-semibold text-4xl text-blueGray-600 mt-60">
                 KHETI - Smart Agriculture
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
@@ -28,25 +34,10 @@ export default function Index() {
                     Get started
                   </a>
                 </Link>
-
-                {/* <a
-                  href="https://github.com/sarvesh2902/Hackanova_CTRL-ALT-ELITE"
-                  className="github-star ml-1 text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-blueGray-700 active:bg-blueGray-600 uppercase text-sm shadow hover:shadow-lg"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Github Repo
-                </a> */}
               </div>
             </div>
           </div>
         </div>
-        <img
-          className="absolute top-0 b-auto right-0 pt-12 sm:w-6/12 mt-16 sm:mt-0 w-100 max-h-860-px"
-          src="/img/homelogo.png"
-          alt="..."
-          style={{ marginTop: "150px" }}
-        />
       </section>
 
       <section
@@ -74,7 +65,7 @@ export default function Index() {
         </div>
         <div className="container mx-auto">
           <div className="flex flex-wrap items-center">
-            <div className="w-10/12 md:w-6/12 lg:w-4/12 px-12 md:px-4 mr-auto ml-auto -mt-32">
+            <div className="w-10/12 md:w-6/12 lg:w-4/12  md:px-4 mr-auto ml-auto -mt-32">
               <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-blueGray-700">
                 <img
                   alt="..."
@@ -235,7 +226,7 @@ export default function Index() {
 
         <div className="container mx-auto overflow-hidden pb-20">
           <div className="flex flex-wrap items-center">
-            <div className="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto mt-48">
+            <div className="w-full md:w-4/12  md:px-4 ml-auto mr-auto mt-48">
               <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -255,7 +246,7 @@ export default function Index() {
               <h3 className="text-3xl mb-2 font-semibold leading-normal">
                 Disease Detection
               </h3>
-              <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600">
+              <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600 ml-5">
                 KHETI allows you to identify dangerous crop diseases and apply
                 an individual approach to treat them, thus increasing disease
                 prevention effectively.
@@ -306,7 +297,7 @@ export default function Index() {
               />
             </div>
 
-            <div className="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto mt-48">
+            <div className="w-full md:w-4/12  md:px-4 ml-auto mr-auto mt-48">
               <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -326,7 +317,7 @@ export default function Index() {
               <h3 className="text-3xl mb-2 font-semibold leading-normal">
                 Fertilizer Recommendation
               </h3>
-              <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600">
+              <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600 ml-5">
                 The amount of fertilizers added to soil during the period of
                 cultivation can greatly affect the soil pH and nutrients. Know
                 the right amount from KHETI.
@@ -361,7 +352,7 @@ export default function Index() {
           </div>
 
           <div className="flex flex-wrap items-center">
-            <div className="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto mt-48">
+            <div className="w-full md:w-4/12  md:px-4 ml-auto mr-auto mt-48">
               <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -381,7 +372,7 @@ export default function Index() {
               <h3 className="text-3xl mb-2 font-semibold leading-normal">
                 Crop Recommendation
               </h3>
-              <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600">
+              <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600 ml-5">
                 Various factors like minerals present in the soil, temperature
                 and humidity play an important role in deciding the type of the
                 crop. Gather more information about the same, here.
@@ -432,7 +423,7 @@ export default function Index() {
               />
             </div>
 
-            <div className="w-full md:w-4/12 px-12 md:px-4 ml-auto mr-auto mt-48">
+            <div className="w-full md:w-4/12  md:px-4 ml-auto mr-auto mt-48">
               <div className="text-blueGray-500 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -509,7 +500,7 @@ export default function Index() {
         </div>
 
         <div className="container mx-auto">
-          <div className="flex flex-wrap justify-center bg-white shadow-xl rounded-lg -mt-64 py-16 px-12 relative z-10">
+          <div className="flex flex-wrap justify-center bg-white shadow-xl rounded-lg -mt-64 py-16  relative z-10">
             <div className="w-full text-center lg:w-8/12">
               <h3 className="font-semibold text-3xl">Let&apos;s get started</h3>
               <p className="text-blueGray-500 text-lg leading-relaxed mt-4 mb-4">

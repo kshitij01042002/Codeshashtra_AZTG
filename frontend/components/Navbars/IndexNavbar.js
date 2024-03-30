@@ -107,13 +107,13 @@ export default function Navbar(props) {
               <li className="flex items-center">
                 <Link href="/shop">
                   <a className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-sm uppercase font-bold">
-                    Fertilizer Shop
+                    FERTILIZER & LAB STORES
                     {/* <span className="lg:hidden inline-block ml-2">Share</span> */}
                   </a>
                 </Link>
               </li>
               <li className="flex items-center">
-                <Link href="http://localhost:3000/marketplace">
+                <Link href="http://192.168.189.180:3001/marketplace">
                   <a className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-sm uppercase font-bold">
                     MarketPlace
                   </a>
@@ -122,7 +122,7 @@ export default function Navbar(props) {
               <li className="flex items-center">
                 <Link href="/dashboard">
                   <a className="hover:text-blueGray-500 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-sm uppercase font-bold">
-                    LOAN WAIVER DATA
+                    FINANCE MANAGEMENT
                   </a>
                 </Link>
               </li>

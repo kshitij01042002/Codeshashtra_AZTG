@@ -12,7 +12,7 @@ export default function CardBarChart() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5000/crop-predict");
+        const response = await fetch("http://192.168.189.180:5000/crop-predict");
         const data = await response.json();
         setChartData(data);
         console.log(data)

@@ -196,7 +196,7 @@ export default function Sidebar() {
                           : "text-blueGray-300")
                       }
                     ></i>{" "}
-                    Fertilizer Shop
+                    FERTILIZER & LAB STORES
                   </a>
                 </Link>
               </li> */}
@@ -248,6 +248,23 @@ export default function Sidebar() {
               </li>
 
               <li className="items-center">
+              <Link href="http://192.168.189.180:3001/marketplace">
+                  <a className="text-sm uppercase py-3 font-bold block">
+                  
+                  <i
+                      className={
+                        "fas fa-table mr-2 text-sm " +
+                        (router.pathname.indexOf("/labs") !== -1
+                          ? "opacity-75"
+                          : "text-blueGray-300")
+                      }
+                    ></i>{" "}
+                  MARKETPLACE
+                  </a>
+                </Link>
+              </li>
+
+              <li className="items-center">
                 <Link href="/labs">
                   <a
                     className={
@@ -265,7 +282,23 @@ export default function Sidebar() {
                           : "text-blueGray-300")
                       }
                     ></i>{" "}
-                    Labs & Fertilizer store 
+                    FERTILIZER & LAB STORES
+                  </a>
+                </Link>
+              </li>
+
+              <li className="items-center">
+              <Link href="/dashboard">
+                  <a className="text-sm uppercase py-3 font-bold block">
+                  <i
+                      className={
+                        "fas fa-map-marked mr-2 text-sm " +
+                        (router.pathname.indexOf("/weather") !== -1
+                          ? "opacity-75"
+                          : "text-blueGray-300")
+                      }
+                    ></i>{" "}
+                    FINANCE MANAGEMENT
                   </a>
                 </Link>
               </li>

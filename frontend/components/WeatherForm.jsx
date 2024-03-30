@@ -52,7 +52,7 @@ const WeatherForm = () => {
 
   return (
     <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
-      <div className="flex-auto px-4 lg:px-10 py-10">
+      <div className="flex-auto lg:px-10 py-10">
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-2">
             <div className="mb-3 mr-2">

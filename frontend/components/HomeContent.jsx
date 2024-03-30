@@ -4,12 +4,12 @@ import Link from "next/link";
 const HomeContent = () => {
   return (
     <>
+    <img
+      src="https://res.cloudinary.com/atharva7/image/upload/v1664643964/samples/planttree_af1zl9.jpg"
+      className="bg-cover h-full w-full"
+    />
       <div className="h-max w-full pb-10">
         <div className="relative pt-100">
-          <img
-            src="https://res.cloudinary.com/atharva7/image/upload/v1664643964/samples/planttree_af1zl9.jpg"
-            className="bg-cover h-full w-full"
-          />
           <h1 className="absolute text-5xl text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
             KHETI, Smart Agriculture
           </h1>

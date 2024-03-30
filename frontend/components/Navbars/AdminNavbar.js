@@ -48,7 +48,7 @@ export default function Navbar({ title, image }) {
                 <a>LOG OUT</a>
               </Link>
             </div>
-            <div className="items-center flex text-white">
+            {/* <div className="items-center flex text-white">
               <span className="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full">
                 <img
                   alt="..."
@@ -56,7 +56,7 @@ export default function Navbar({ title, image }) {
                   src={image}
                 />
               </span>
-            </div>
+            </div> */}
           </ul>
         </div>
       </nav>

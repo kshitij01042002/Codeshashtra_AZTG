@@ -10,7 +10,7 @@ export default function Crop() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-   setLoading(false);
+    setLoading(false);
   });
 
   if (loading) {
@@ -22,10 +22,9 @@ export default function Crop() {
       headerText="Enter details to get crop recommendations"
       desc="Click on the play button to get the description of the page"
     >
-        <ReactAudioPlayer
-  src="/Crop_rec.mp3"
-  controls
-/>
+      <div className="flex justify-center mt-4">
+        <ReactAudioPlayer src="/Crop_rec.mp3" controls />
+      </div>
       <div className="flex flex-wrap mt-4 justify-center">
         <div className="w-full mb-12 xl:mb-0 px-4">
           <CropForm />

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const LabForm = () => {
   const [formData, setFormData] = useState({
     city: "",
-    option: "fertilizerShop", // Default option is fertilizer shop
+    option: "fertilizerShop", // Default option is FERTILIZER & LAB STORES
   });
 
   const [output, setOutput] = useState(null);
@@ -59,7 +59,7 @@ const LabForm = () => {
               onChange={handleChange}
               value={formData.option}
             >
-              <option value="fertilizerShop">Fertilizer Shop</option>
+              <option value="fertilizerShop">FERTILIZER & LAB STORES</option>
               <option value="labs">Labs</option>
             </select>
           </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { signIn, useSession, getSession } from "next-auth/react";
+import ReactAudioPlayer from "react-audio-player";
 import Admin from "layouts/Admin.js";
 
 import ChatBott from "components/chatbot";
@@ -21,6 +22,7 @@ export default function Chatbott() {
       title="Farmers Friend"
       headerText="Enter or Just say whatever you want to know about farming"
     >
+      <ReactAudioPlayer src="/chatbot.mp3" controls style={{marginBottom: "30px"}}/>   
       <ChatBott />
     </Admin>
   );

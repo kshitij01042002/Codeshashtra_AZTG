@@ -61,7 +61,7 @@ const ChatRoom = () => {
       ]);
 
       try {
-        const response = await axios.post('http://localhost:5000/get_bot_response', {
+        const response = await axios.post('http://192.168.189.180:5000/get_bot_response', {
           userMessage: inputMessage,
         });
         const botResponse = response.data.botResponse;
@@ -95,7 +95,7 @@ const ChatRoom = () => {
 
       // const h = await handleVoiceOutput(getBotResponse());
       try {
-        const response = await axios.post('http://localhost:5000/get_bot_response', {
+        const response = await axios.post('http://192.168.189.180:5000/get_bot_response', {
           userMessage: userVoiceInput,
         });
         const botResponse = response.data.botResponse;
@@ -140,7 +140,7 @@ const ChatRoom = () => {
     // For simplicity, use a predefined response
 
 
-    const response = await axios.post('http://localhost:5000/get_bot_response', {
+    const response = await axios.post('http://192.168.189.180:5000/get_bot_response', {
       userMessage: userInput,
     });
 

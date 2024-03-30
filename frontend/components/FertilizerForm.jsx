@@ -34,7 +34,7 @@ const FertilizerForm = () => {
     let data = null;
 
     await axios
-      .post("http://127.0.0.1:5000/fertilizer-predict", {
+      .post("http://192.168.189.180:5000/fertilizer-predict", {
         location: formData.Location,
         Moist: Number(formData.Moist),
         Soil: Number(formData.Soil),
