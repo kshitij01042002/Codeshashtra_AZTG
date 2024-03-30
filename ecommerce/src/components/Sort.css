@@ -1,0 +1,15 @@
+.sort_css{
+    padding:3px 0px 5px 0px;
+    box-shadow:2px 2px 2px 2px black;
+    border:"1px solid black";
+    border-radius:5px;
+}
+.sort_css li{
+    transform: scale(1);
+    font-weight: 300;
+    transition:all 0.2s ease;
+}
+.sort_css li:hover{
+    font-weight: 600;
+    transform: scale(1.1);
+}
