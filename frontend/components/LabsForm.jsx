@@ -59,8 +59,8 @@ const LabForm = () => {
               onChange={handleChange}
               value={formData.option}
             >
-              <option value="fertilizerShop">FERTILIZER & LAB STORES</option>
-              <option value="labs">Labs</option>
+              <option value="fertilizerShop">FERTILIZER STORES</option>
+              <option value="labs">LABS</option>
             </select>
           </div>
 

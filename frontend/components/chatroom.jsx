@@ -179,7 +179,7 @@ const ChatRoom = () => {
             Send
           </Button>
           <Button variant="contained" className={classes.sendButton} onClick={handleVoiceInput}>
-            Microphone
+            NAV-ASSIST
           </Button>
         </div>
       </div>

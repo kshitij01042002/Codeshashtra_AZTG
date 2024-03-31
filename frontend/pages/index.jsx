@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import Footer from "components/Footers/Footer.js";
-import ChatBot from "components/ChatBot";
 import Image from "next/image";
 import Layout from "components/Layout";
 
