@@ -55,7 +55,7 @@ from werkzeug.utils import secure_filename
 import speech_recognition as sr
 
 openai.api_key = "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" #os.getenv("OPENAI_API_KEY_IMAGE")
-geminikey = "AIzaSyAwYtdZDx-tP7EAjyM6hlXCWOo2nRQ5dTQ"
+geminikey = "AIzaSyD1zvUJ_SKcEe-By_cB1rPO4C0jCeolhd0"
 genai.configure(api_key=geminikey)  
 
 # client = pymongo.MongoClient("mongodb+srv://pratham:kheti1234@cluster0.saiervy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
@@ -288,7 +288,24 @@ def get_crops():
         "xlabel":"Crops",
         "ylabel":"counts"
     })
+@app.route("/finance", methods=["POST"])
+def finance():
+    data = request.get_json()  # Get the request data
 
+    B = data.get('B')
+    L = data.get('L')
+    print(B,L)
+    pf = f"""don't use * and ** and *** and astrik in the response , how to use this rs {B} budget for efficient farming with rs {L} loan. Here are some points:
+1. Pay loan on time
+2. Buy seeds
+3. Buy fertilizers
+4. Buy pesticides
+5. Buy machinery
+"""
+
+    model = genai.GenerativeModel('gemini-1.0-pro')
+    response = model.generate_content(pf)
+    return response.text
 
 @app.route("/fertilizer-predict", methods=["POST"])
 def result2():
@@ -330,7 +347,7 @@ def result2():
                 # "img": response["data"][0]["url"],
                 "how_to_use": "Compost is easy to make at home using food scraps, yard waste, and other organic materials. You can also purchase compost at garden centers and nurseries. To use compost as a fertilizer, simply mix it into the soil before planting or use it as a top dressing around established plants. \nThat being said, it's always a good idea to do a soil test to determine the specific nutrient needs of your plants and soil. This can help you choose the right organic fertilizer and ensure that your plants are getting the nutrients they need to grow and thrive.",
                 
-                "buylink" : "http://localhost:3000/product/5",
+                "buylink" : "http://192.168.189.180:3000/product/5",
                 "image" : "https://www.kribhco.net/assets/img/product/compost.jpg"
             }
         elif ans == 1:
@@ -375,7 +392,7 @@ def result2():
                 "name": "Organic Liquid Fish Fertilizer",
                 # "img": response["data"][0]["url"],
                 "how_to_use": "Organic Liquid Fish Fertilizer composition: Feather meal | Bone meal | Sulfate of potash | Kelp meal | Alfalfa meal | Humic acid",
-                "buylink" : "http://localhost:3000/product/0",
+                "buylink" : "http://192.168.189.180:3000/product/0",
                 "image" : "https://m.media-amazon.com/images/I/41ruFc3dXLL._SY445_SX342_QL70_FMwebp_.jpg"
             }
         elif ans == 4:
@@ -698,9 +715,43 @@ def get_bot_response():
 
     items = generated_text.split(',')
 
-    
+    #sd ad as d
     # Return the generated response from Gem AI
     return jsonify({'botResponse': generated_text})
+
+@app.route('/get_bot', methods=['POST'])
+def get_bot():
+    user_message = request.json.get('userMessage', '')
+    print(user_message)
+    
+    # Use Gem AI to generate a response
+    pf = f'''you are a navigation bar you have to redirect the user to the respective page based on the user's input.
+    the input could be in any language you have to capture the keyword from the input and return the keyword only while translating it in english that are provided below eg : khabar  == news , roge == disease , dukan == store etc etc.
+            input = {user_message}
+            
+            1. Home
+            2. chatbot
+            3. news
+            4. dashboard
+            5. chatroom
+            6. store
+            7. fertilizer
+            8. crop
+            9. disease
+            10. weather
+            11. news
+            other than this  keyword dont do anything.
+            
+            eg : if user says "i want to go to chatbot page " then you should only return word "chatbot".
+            '''
+           
+    model = genai.GenerativeModel('gemini-1.0-pro')
+    response = model.generate_content(pf)
+    generated_text = response.text
+    print(generated_text)
+
+    return generated_text
+   
 
 @app.route('/product', methods=['POST'])
 def get_product_info():
@@ -739,8 +790,8 @@ def get_product_info():
     total_points = sum(item['points'] for item in response_data.values())
     print(total_points)
     # Email account credentials
-    sender_email = 'barwaniwalataher6@outlook.com'
-    sender_password = '_Taher@2002'
+    sender_email = 'dhanSakhi@outlook.com'
+    sender_password = 'Kshitij@1234'
     receiver_emails = ['ingawalepratham@gmail.com', 'kshitijpatil1098@gmail.com', 'suryavanshionkar2002@gmail.com']
 
     # Create message object instance
@@ -782,4 +833,4 @@ def get_product_info():
 
 
 if __name__ == "__main__":
-    app.run(port=5000 , debug=True)
+    app.run(host='0.0.0.0')

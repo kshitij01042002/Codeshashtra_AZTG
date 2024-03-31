@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { signIn, useSession, getSession } from "next-auth/react";
+import Voice from "components/voice";
 
 
 export default function Navbar({ title, image }) {
@@ -21,6 +22,7 @@ export default function Navbar({ title, image }) {
 
             </a>
           </Link>
+          <Voice/>
         </div>
       </nav>
       </>

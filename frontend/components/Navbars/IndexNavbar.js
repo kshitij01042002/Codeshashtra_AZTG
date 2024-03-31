@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
+import Voice from "components/voice";
 
 export default function Navbar(props) {
   const googleTranslateElementInit = () => {
@@ -41,7 +42,9 @@ export default function Navbar(props) {
                   KHETI
                 </a>
               </Link>
+              <Voice/>
             </div>
+          
             <button
               className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
