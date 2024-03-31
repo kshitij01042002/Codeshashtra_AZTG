@@ -11,11 +11,7 @@ const handleVoiceInput = async () => {
       const userVoiceInput = event.results[0][0].transcript.trim();
         console.log(userVoiceInput);
       try {
-        const response = await axios.post('http://192.168.189.180:5000/get_bot', { userMessage: userVoiceInput });
         const botResponse = response.data
-        console.log(botResponse);
-        console.log(typeof(botResponse));
-        if (botResponse == "chatbot" ){
           window.location.href = 'http://192.168.189.180:3000/chatbot';
         }else if (botResponse == "dashboard"){
           window.location.href = 'http://192.168.189.180:3000/dashboard';
